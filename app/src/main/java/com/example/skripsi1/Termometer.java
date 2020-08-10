@@ -46,7 +46,7 @@ public class Termometer extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
                     suhuVal = dataSnapshot.getValue(String.class);
-                    suhu.setText(suhuVal);
+                    suhu.setText(suhuVal + "°C");
                 }
             }
 
