@@ -63,7 +63,7 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switchButton"
+            android:id="@+id/swTemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="top|center_horizontal"
@@ -76,15 +76,33 @@
             android:thumb="@drawable/sw_thumb"
             android:track="@drawable/sw_track" />
 
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:text="Suhu                :                   "
-            android:textSize="23sp"
-            android:textStyle="bold"
-            />
+            android:weightSum="6"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:fontFamily="sans-serif-black"
+                android:text="Suhu                : "
+                android:textSize="23sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tvSuhuValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:fontFamily="sans-serif-black"
+                android:textSize="23sp"
+                android:text="Suhu"/>
+        </LinearLayout>
+
 
 
     </LinearLayout>
