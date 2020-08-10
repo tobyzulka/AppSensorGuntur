@@ -62,7 +62,7 @@
         android:layout_gravity="center">
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switchButton"
+            android:id="@+id/swKipas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"

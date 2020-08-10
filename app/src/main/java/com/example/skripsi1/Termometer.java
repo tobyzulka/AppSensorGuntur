@@ -57,7 +57,7 @@ public class Termometer extends AppCompatActivity {
         });
 
 
-        dbSuhu = FirebaseDatabase.getInstance().getReference("termo");
+        dbSuhu = FirebaseDatabase.getInstance().getReference("termometer");
         dbSuhu.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -65,8 +65,12 @@ public class Termometer extends AppCompatActivity {
                     btSuhu = dataSnapshot.getValue(Integer.class);
                     if(btSuhu != 0){
                         switchCompat.setChecked(true);
+                        text.setVisibility(View.VISIBLE);
+                        suhu.setVisibility(View.VISIBLE);
                     } else {
                         switchCompat.setChecked(false);
+                        text.setVisibility(View.INVISIBLE);
+                        suhu.setVisibility(View.INVISIBLE);
                     }
                 }
             }
@@ -85,16 +89,16 @@ public class Termometer extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (switchCompat.isChecked()){
                             Toast.makeText(Termometer.this, "Termometer Menyala", Toast.LENGTH_SHORT).show();
-                            text.setVisibility(View.VISIBLE);
-                            suhu.setVisibility(View.VISIBLE);
+//                            text.setVisibility(View.VISIBLE);
+//                            suhu.setVisibility(View.VISIBLE);
 
                         }else{
                             database.getReference("termometer").setValue(0).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     Toast.makeText(Termometer.this, "Termometer Mati", Toast.LENGTH_SHORT).show();
-                                    text.setVisibility(View.INVISIBLE);
-                                    suhu.setVisibility(View.INVISIBLE);
+//                                    text.setVisibility(View.INVISIBLE);
+//                                    suhu.setVisibility(View.INVISIBLE);
                                 }
                             });
                         }
